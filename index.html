@@ -17,6 +17,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- daisyUI CSS -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind JS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: {
+                    center: true,
+                    padding: "3rem"
+                },
+                extend: {
+                    fontFamily: {
+                        "body": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="font-body">
 <!-- Header -->
@@ -27,28 +44,138 @@
                 <h1 class="font-bold text-[rgba(17,_17,_17,_0.8)]">interactive</h1>
                 <p class="font-medium text-[rgba(17,_17,_17,_0.6)]">geometry genius</p>
             </div>
-            <button class="bg-[#1090d8] px-4 py-1 rounded-lg text-white text-xl font-bold capitalize">blog</button>
+            <a href="./blog.html" class="bg-[#1090d8] px-4 py-1 rounded-lg text-white text-xl font-bold capitalize">blog</a>
         </div>
     </div>
 </header>
 
-<!-- Tailwind JS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        theme: {
-            container: {
-                center: true,
-                padding: "3rem"
-            },
-            extend: {
-                fontFamily: {
-                    "body": ["Inter", "sans-serif"]
-                }
-            }
-        }
-    }
-</script>
+<!-- Geometry -->
+<section class="py-5">
+    <div class="container">
+        <div class="row flex flex-col space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
+            <div class="col">
+                <div class="row grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-3">
+                    <div class="col">
+                        <div class="card border border-[rgba(17,_17,_17,_0.1)]">
+                            <figure class="px-10 pt-10">
+                                <img src="./asset/img/triangle.png" alt="triangle" class="w-full h-48" />
+                            </figure>
+                            <div class="card-body items-center text-[#414141]">
+                                <h2 class="card-title text-2xl font-bold capitalize">triangle</h2>
+                                <p>Area (A) = 0.5 &times b &times h</p>
+                                <div class="input-grp flex space-x-2">
+                                    <input type="text" placeholder="b" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                    <input type="text" placeholder="h" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                </div>
+                                <button class="btn btn-info w-full mt-5 text-white capitalize">calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border border-[rgba(17,_17,_17,_0.1)]">
+                            <figure class="px-10 pt-10">
+                                <img src="./asset/img/rectangle.png" alt="rectangle" class="w-full h-48" />
+                            </figure>
+                            <div class="card-body items-center text-[#414141]">
+                                <h2 class="card-title text-2xl font-bold capitalize">rectangle</h2>
+                                <p>Area (A) = w &times l</p>
+                                <div class="input-grp flex space-x-2">
+                                    <input type="text" placeholder="w" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                    <input type="text" placeholder="l" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                </div>
+                                <button class="btn btn-info w-full mt-5 text-white capitalize">calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border border-[rgba(17,_17,_17,_0.1)]">
+                            <figure class="px-10 pt-10">
+                                <img src="./asset/img/parallelogram.png" alt="parallelogram" class="w-full h-48" />
+                            </figure>
+                            <div class="card-body items-center text-[#414141]">
+                                <h2 class="card-title text-2xl font-bold capitalize">parallelogram</h2>
+                                <p>Area (A) = b &times h</p>
+                                <div class="input-grp flex space-x-2">
+                                    <input type="text" placeholder="b" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                    <input type="text" placeholder="h" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                </div>
+                                <button class="btn btn-info w-full mt-5 text-white capitalize">calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border border-[rgba(17,_17,_17,_0.1)]">
+                            <figure class="px-10 pt-10">
+                                <img src="./asset/img/rhombus.png" alt="rhombus" class="w-full h-48" />
+                            </figure>
+                            <div class="card-body items-center text-[#414141]">
+                                <h2 class="card-title text-2xl font-bold capitalize">rhombus</h2>
+                                <p>Area (A) = 0.5 &times d<sub>1</sub> &times d<sub>2</sub></p>
+                                <div class="input-grp flex space-x-2">
+                                    <input type="text" placeholder="d1" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                    <input type="text" placeholder="d2" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                </div>
+                                <button class="btn btn-info w-full mt-5 text-white capitalize">calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border border-[rgba(17,_17,_17,_0.1)]">
+                            <figure class="px-10 pt-10">
+                                <img src="./asset/img/pentagon.png" alt="pentagon" class="w-full h-48" />
+                            </figure>
+                            <div class="card-body items-center text-[#414141]">
+                                <h2 class="card-title text-2xl font-bold capitalize">pentagon</h2>
+                                <p>Area (A) = 0.5 &times p &times b</p>
+                                <div class="input-grp flex space-x-2">
+                                    <input type="text" placeholder="p" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                    <input type="text" placeholder="b" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                </div>
+                                <button class="btn btn-info w-full mt-5 text-white capitalize">calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border border-[rgba(17,_17,_17,_0.1)]">
+                            <figure class="px-10 pt-10">
+                                <img src="./asset/img/ellipse.png" alt="ellipse" class="w-full h-48" />
+                            </figure>
+                            <div class="card-body items-center text-[#414141]">
+                                <h2 class="card-title text-2xl font-bold capitalize">ellipse</h2>
+                                <p>Area (A) = &pi;ab</p>
+                                <div class="input-grp flex space-x-2">
+                                    <input type="text" placeholder="b" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                    <input type="text" placeholder="h" class="input input-bordered input-xs w-20 bg-[#f1f1f1] rounded" />
+                                    <span>cm</span>
+                                </div>
+                                <button class="btn btn-info w-full mt-5 text-white capitalize">calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col basis-96">
+                <div class="card border border-[rgba(17,_17,_17,_0.1)]">
+                    <div class="card-body">
+                        <h2 class="card-title text-xl font-bold capitalize underline">area calculation</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Custom JS -->
 <script src="./asset/js/custom.js"></script>
 </body>
