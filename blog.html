@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Title -->
+    <title>Geometry Genius</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./asset/img/favicon.png" type="image/x-icon">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- daisyUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind JS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: {
+                    center: true,
+                    padding: "3rem"
+                },
+                extend: {
+                    fontFamily: {
+                        "body": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body">
+<!-- Header -->
+<header class="mt-5">
+    <div class="container">
+        <div class="flex justify-between items-center bg-[#e8f4fc] px-5 py-2 rounded-lg capitalize">
+            <div class="text-3xl">
+                <h1 class="font-bold text-[rgba(17,_17,_17,_0.8)]">interactive</h1>
+                <p class="font-medium text-[rgba(17,_17,_17,_0.6)]">geometry genius</p>
+            </div>
+            <a href="./" class="bg-[#1090d8] px-4 py-1 rounded-lg text-white text-xl font-bold capitalize">home</a>
+        </div>
+    </div>
+</header>
+
+<!-- Question -->
+<section class="py-5">
+    <div class="container">
+        <div class="max-w-lg mx-auto space-y-3">
+            <div class="accordion border border-sky-900 rounded-lg">
+                <input type="checkbox" class="hidden peer" id="accordion-1">
+                <div class="flex items-center px-10 py-5 font-medium hover:text-sky-500 rounded-lg shadow-sm space-x-2 cursor-pointer" onclick="document.getElementById('accordion-1').click()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 mr-auto">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                    </svg>
+                    <h5 class="w-11/12">What is DOM? Explain purpose of DOM!</h5>
+                </div>
+                <div class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-[max-height] duration-500">
+                    <p class="pl-24 pr-10 py-10 text-base">DOM is a Document Object Model & Programming Interface for HTML that defines objects, properties, methods and events. The purpose of DOM is to get, change, add, delete HTML elements.</p>
+                </div>
+            </div>
+            <div class="accordion border border-sky-900 rounded-lg">
+                <input type="checkbox" class="hidden peer" id="accordion-2">
+                <div class="flex items-center px-10 py-5 font-medium hover:text-sky-500 rounded-lg shadow-sm space-x-2 cursor-pointer" onclick="document.getElementById('accordion-2').click()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 mr-auto">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                    </svg>
+                    <h5 class="w-11/12">How can you select any element by DOM?</h5>
+                </div>
+                <div class="max-h-0 overflow-hidden peer-checked:max-h-[48rem] transition-[max-height] duration-500">
+                    <div class="pl-24 pr-10 py-10 text-base">HTML elements mainly select by four ways. Those are:
+                        <ol class="mt-2 list-decimal list-inside space-y-2">
+                            <li>Selecting Elements by ID: The selection is based on the Id name of HTML element.</li>
+                            <li>Selecting Elements by Class Name: All the HTML elements that matches the specified Class name.</li>
+                            <li>Selecting Elements by Tag Name: All the HTML elements that matches the specified Tag name.</li>
+                            <li>
+                                Selecting Elements with CSS Selectors:
+                                <ul class="list-disc list-inside pl-6 space-y-2">
+                                    <li>Query Selector: First element of HTML that matches a specified CSS selector (id, class names, types, attributes, values of attributes, etc).</li>
+                                    <li>Query Selector All: All the HTML elements that matches a specified CSS selector (id, class names, types, attributes, values of attributes, etc).</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion border border-sky-900 rounded-lg">
+                <input type="checkbox" class="hidden peer" id="accordion-3">
+                <div class="flex items-center px-10 py-5 font-medium hover:text-sky-500 rounded-lg shadow-sm space-x-2 cursor-pointer" onclick="document.getElementById('accordion-3').click()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 mr-auto">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                    </svg>
+                    <h5 class="w-11/12">What is Event Bubble?</h5>
+                </div>
+                <div class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-[max-height] duration-500">
+                    <p class="pl-24 pr-10 py-10 text-base">The way of when we fire any event then the inner most element's (target element) event is handled first and then the outer (parent and ancestor elements in the DOM tree until it gets to the root element). This method called Event Bubble.</p>
+                </div>
+            </div>
+            <div class="accordion border border-sky-900 rounded-lg">
+                <input type="checkbox" class="hidden peer" id="accordion-4">
+                <div class="flex items-center px-10 py-5 font-medium hover:text-sky-500 rounded-lg shadow-sm space-x-2 cursor-pointer" onclick="document.getElementById('accordion-4').click()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 mr-auto">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                    </svg>
+                    <h5 class="w-11/12">What is Callback Function?</h5>
+                </div>
+                <div class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-[max-height] duration-500">
+                    <p class="pl-24 pr-10 py-10 text-base">A callback function is a function that is passed as an argument to another function, to be “called back” at a later time. It allows a function to call another function and also can run after another function has finished.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
