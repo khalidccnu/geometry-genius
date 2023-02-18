@@ -1,3 +1,10 @@
+// unit convert from centimeter sq to meter sq
+let uniConverter = function (value) {
+    let cm = value.parentNode.previousElementSibling.firstElementChild;
+    cm.textContent = (cm.textContent * 0.0001).toFixed(4);
+    cm.nextElementSibling.textContent = "m";
+}
+
 // multiply of any two numbers
 let partialCalc = function (num1, num2) {
     return num1 * num2;
@@ -37,9 +44,14 @@ let showData = function (name, num1, num2) {
 
     tableRow.innerHTML = `
         <td class="capitalize">${serial} ${name}</td>
-        <td>${areaResultLength}cm<sup>2</sup></td>
+        <td><span>${areaResultLength}</span><span>cm</span><sup>2</sup></td>
         <td><button class="btn btn-xs btn-info inline text-white normal-case">Convert to m<sup>2</sup></button></td>
     `;
+
+    tableRow.children[2].firstElementChild.onclick = function () {
+        uniConverter(this);
+        this.setAttribute("disabled", "true");
+    }
 
     areaCalc.appendChild(tableRow);
 }
