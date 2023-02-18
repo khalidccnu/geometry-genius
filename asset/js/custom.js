@@ -1,7 +1,9 @@
+// multiply of any two numbers
 let partialCalc = function (num1, num2) {
     return num1 * num2;
 }
 
+// get area from any item
 let area = function (name, partialResult) {
     switch (name) {
         case "rectangle":
@@ -16,10 +18,18 @@ let area = function (name, partialResult) {
     }
 }
 
+// check area is integer or not
+let arLength = function (val) {
+    if (Number.isInteger(val)) return val;
+    else return val.toFixed(2);
+}
+
+// show data in area calculation box
 let serial = 0;
 let showData = function (name, num1, num2) {
     let result = partialCalc(num1, num2);
     let areaResult = area(name, result);
+    let areaResultLength = arLength(areaResult);
 
     let areaCalc = document.getElementById("area-calc");
     let tableRow = document.createElement("tr");
@@ -27,13 +37,14 @@ let showData = function (name, num1, num2) {
 
     tableRow.innerHTML = `
         <td class="capitalize">${serial} ${name}</td>
-        <td>${areaResult}cm<sup>2</sup></td>
+        <td>${areaResultLength}cm<sup>2</sup></td>
         <td><button class="btn btn-xs btn-info inline text-white normal-case">Convert to m<sup>2</sup></button></td>
     `;
 
     areaCalc.appendChild(tableRow);
 }
 
+// select & assign function to all calculation button
 let btnCalc = document.getElementsByClassName("btn-calc");
 for(let btn of btnCalc) {
     btn.addEventListener("click", () => {
