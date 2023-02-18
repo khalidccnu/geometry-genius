@@ -31,7 +31,7 @@ let arLength = function (val) {
     else return val.toFixed(2);
 }
 
-// show data in area calculation box
+// show data in area calculation card
 let serial = 0;
 let showData = function (name, num1, num2) {
     let result = partialCalc(num1, num2);
@@ -43,7 +43,7 @@ let showData = function (name, num1, num2) {
     serial++;
 
     tableRow.innerHTML = `
-        <td class="capitalize">${serial} ${name}</td>
+        <td class="capitalize">${serial}. ${name}</td>
         <td><span>${areaResultLength}</span><span>cm</span><sup>2</sup></td>
         <td><button class="btn btn-xs btn-info inline text-white normal-case">Convert to m<sup>2</sup></button></td>
     `;
@@ -77,9 +77,10 @@ for(let btn of btnCalc) {
     });
 }
 
-document.querySelectorAll(".card").forEach((e) => {
-    e.addEventListener("mouseenter", function () {
+// change item card background color
+document.querySelectorAll(".start-col .card").forEach((e) => {
+    e.addEventListener("mouseenter", () => {
         let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-        this.style.backgroundColor = "#" + randomColor;
+        e.style.backgroundColor = "#" + randomColor;
     });
 });
