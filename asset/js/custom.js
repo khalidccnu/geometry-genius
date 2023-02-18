@@ -44,6 +44,15 @@ let showData = function (name, num1, num2) {
     areaCalc.appendChild(tableRow);
 }
 
+// check correct input value
+let inputValidation = function (name, num1, num2) {
+    if (num1 === "" || num2 === "") return alert("One or more field required.");
+    else if (num1 < 0 || num2 < 0) return alert("Negative value is not supported.");
+    else if (isNaN(num1) === true || isNaN(num2) === true) return alert("Only number supported.");
+
+    showData(name, num1, num2);
+}
+
 // select & assign function to all calculation button
 let btnCalc = document.getElementsByClassName("btn-calc");
 for(let btn of btnCalc) {
@@ -52,6 +61,6 @@ for(let btn of btnCalc) {
         let firstNumber = btn.previousElementSibling.querySelectorAll("input")[0].value;
         let secondNumber = btn.previousElementSibling.querySelectorAll("input")[1].value;
 
-        showData(title, firstNumber, secondNumber);
+        inputValidation(title, firstNumber, secondNumber);
     });
 }
