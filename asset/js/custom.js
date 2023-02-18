@@ -1,4 +1,5 @@
 // check item in area calculation card is exist or not
+let serial;
 let existItem = function () {
     let title;
     let areaCalcCard = document.querySelector(".end-col");
@@ -9,6 +10,7 @@ let existItem = function () {
         title.innerText = "Empty";
 
         areaCalcCard.querySelector("h2").parentNode.appendChild(title);
+        serial = 0;
     } else {
         title = areaCalcCard.querySelector("h5");
         if (title) title.parentNode.removeChild(title);
@@ -57,7 +59,6 @@ let arLength = function (val) {
 }
 
 // show data in area calculation card
-let serial = 0;
 let showData = function (name, num1, num2) {
     let result = partialCalc(num1, num2);
     let areaResult = area(name, result);
@@ -67,10 +68,9 @@ let showData = function (name, num1, num2) {
     let tableRow = document.createElement("tr");
 
     tableRow.className = "table-row";
-    serial++;
 
     tableRow.innerHTML = `
-        <td class="capitalize">${serial}. ${name}</td>
+        <td class="capitalize">${++serial}. ${name}</td>
         <td><span>${areaResultLength}</span><span>cm</span><sup>2</sup></td>
         <td class="space-x-1"><button class="btn btn-xs btn-info inline text-white normal-case">Convert to m<sup>2</sup></button><button class="btn btn-xs btn-warning text-white"><i class="bx bx-trash"></i></button></td>
     `;
