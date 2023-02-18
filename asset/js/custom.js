@@ -5,6 +5,12 @@ let uniConverter = function (value) {
     cm.nextElementSibling.textContent = "m";
 }
 
+// delete area item from area calculation card
+let deleteArea = function (value) {
+    let item = value.closest(".table-row");
+    item.parentNode.removeChild(item);
+}
+
 // multiply of any two numbers
 let partialCalc = function (num1, num2) {
     return num1 * num2;
@@ -40,17 +46,23 @@ let showData = function (name, num1, num2) {
 
     let areaCalc = document.getElementById("area-calc");
     let tableRow = document.createElement("tr");
+
+    tableRow.className = "table-row";
     serial++;
 
     tableRow.innerHTML = `
         <td class="capitalize">${serial}. ${name}</td>
         <td><span>${areaResultLength}</span><span>cm</span><sup>2</sup></td>
-        <td><button class="btn btn-xs btn-info inline text-white normal-case">Convert to m<sup>2</sup></button></td>
+        <td class="space-x-1"><button class="btn btn-xs btn-info inline text-white normal-case">Convert to m<sup>2</sup></button><button class="btn btn-xs btn-warning text-white"><i class="bx bx-trash"></i></button></td>
     `;
 
     tableRow.children[2].firstElementChild.onclick = function () {
         uniConverter(this);
         this.setAttribute("disabled", "true");
+    }
+
+    tableRow.children[2].lastElementChild.onclick = function () {
+        deleteArea(this);
     }
 
     areaCalc.appendChild(tableRow);
