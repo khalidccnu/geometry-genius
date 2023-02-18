@@ -1,3 +1,20 @@
+// check item in area calculation card is exist or not
+let existItem = function () {
+    let title;
+    let areaCalcCard = document.querySelector(".end-col");
+
+    if (areaCalcCard.querySelectorAll(".table-row").length < 1) {
+        title = document.createElement("h5");
+        title.className = "text-center";
+        title.innerText = "Empty";
+
+        areaCalcCard.querySelector("h2").parentNode.appendChild(title);
+    } else {
+        title = areaCalcCard.querySelector("h5");
+        if (title) title.parentNode.removeChild(title);
+    }
+}
+
 // unit convert from centimeter sq to meter sq
 let uniConverter = function (value) {
     let cm = value.parentNode.previousElementSibling.firstElementChild;
@@ -9,6 +26,8 @@ let uniConverter = function (value) {
 let deleteArea = function (value) {
     let item = value.closest(".table-row");
     item.parentNode.removeChild(item);
+
+    existItem();
 }
 
 // multiply of any two numbers
@@ -66,6 +85,8 @@ let showData = function (name, num1, num2) {
     }
 
     areaCalc.appendChild(tableRow);
+
+    existItem();
 }
 
 // check correct input value
@@ -96,3 +117,8 @@ document.querySelectorAll(".start-col .card").forEach((e) => {
         e.style.backgroundColor = "#" + randomColor;
     });
 });
+
+// call function on window load
+onload = function () {
+    existItem();
+}
